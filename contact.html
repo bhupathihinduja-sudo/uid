@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Smoke & Spice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">Smoke <span>&</span> Spice</div>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <button class="order-btn">Order Now</button>
+    <a href="login.html" class="signin">Sign In</a>
+  </div>
+
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+  <h1 class="contact-title">Get in Touch</h1>
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+      <h3>📍 Location</h3>
+      <p>Chennai, India</p>
+
+      <h3>📞 Phone</h3>
+      <p>+91 98765 43210</p>
+
+      <h3>📧 Email</h3>
+      <p>support@smokeandspice.com</p>
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <form class="contact-form">
+
+      <input type="text" id="name" placeholder="Your Name" required 
+pattern="[A-Za-z ]+" title="Only letters allowed">
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+    </form>
+
+  </div>
+
+</section>
+<script>
+document.querySelector(".contact-form").addEventListener("submit", function(e) {
+  const name = document.getElementById("name").value;
+
+  if (!/^[A-Za-z ]+$/.test(name)) {
+    alert("Name should contain only letters!");
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>

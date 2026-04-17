@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">Smoke <span> & </span> Spice</div>
+
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <button class="order-btn">Order Now</button>
+    <a href="login.html" class="signin">Sign In</a>
+  </div>
+
+</header>
+<!-- HERO SECTION -->
+<section class="hero">
+
+  <div class="hero-content">
+    <p class="tagline">we speak fluent food</p>
+
+    <h1>
+      NO MATTER WHICH<br>
+      CORNER OF THE<br>
+      WORLD <span>it's from.</span>
+    </h1>
+
+    <p class="desc">
+      Freshly cooked global food bowls. From Tokyo to Tuscany,
+      authentic flavours delivered fresh to your everyday.
+    </p>
+
+    <a href="menu.html">
+  <button class="btn">Order Now →</button>
+</a>
+
+    <ul class="features">
+      <li>Cooked to Order</li>
+      <li>Menu Changes Weekly</li>
+      <li>Everyday Pricing</li>
+    </ul>
+  </div>
+
+  <!-- IMAGE + BADGES -->
+  <div class="hero-image">
+    <img src="image/one.jpg" alt="Food Bowl">
+
+    <div class="badge rating">
+      ⭐ 4.1
+      <span>Rating</span>
+    </div>
+
+    <div class="badge customers">
+      👥 7M+
+      <span>Happy Customers</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- NEXT SECTION -->
+<section class="next-section">
+  <h2>BOWLS BEYOND <span>BORDERS</span></h2>
+  <p>
+    Six promises that make us different. Six reasons to choose global
+    flavours for your everyday.
+  </p>
+</section>
+
+<!-- PROMISES GRID -->
+<section class="promises-section">
+  <div class="promises-grid">
+
+    <div class="promise-card">
+      <img src="image/two.jpg">
+      <h3>MORE GLOBAL. MORE OFTEN.</h3>
+      <p>From Seoul to Sicily, in your weekday bowl.</p>
+    </div>
+
+    <div class="promise-card">
+      <img src="image/three.jpg">
+      <h3>COOKED FRESH, NOT PREPPED AHEAD.</h3>
+      <p>We fire up only after you order.</p>
+    </div>
+
+    <div class="promise-card">
+      <img src="image/four.jpg">
+      <h3>WHOLESOME INGREDIENTS.</h3>
+      <p>No additives. Just real food.</p>
+    </div>
+
+    <div class="promise-card">
+      <img src="image/five.jpg">
+      <h3>FRESH VARIETY EVERY WEEK.</h3>
+      <p>New bowls crafted by global chefs.</p>
+    </div>
+
+    <div class="promise-card">
+      <img src="image/six.jpg">
+      <h3>BALANCED, NOT BORING.</h3>
+      <p>Flavour-first nutrition.</p>
+    </div>
+
+    <div class="promise-card">
+      <img src="image/seven.jpg">
+      <h3>MADE FOR EVERYDAY LIFE.</h3>
+      <p>Great food, zero stress.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="cook-fresh">
+
+  <h2 class="cook-title">
+    SEE HOW WE <span>COOK FRESH</span>
+  </h2>
+
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline>
+      <source src="video/video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cook-features">
+    <div class="cook-box">
+      <h3>Fresh Ingredients</h3>
+      <p>Sourced daily</p>
+    </div>
+
+    <div class="cook-box">
+      <h3>Made to Order</h3>
+      <p>Cooked after order</p>
+    </div>
+
+    <div class="cook-box">
+      <h3>Expert Chefs</h3>
+      <p>Global cuisine experts</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>READY TO TASTE THE DIFFERENCE?</h2>
+    <p>
+      World-class flavours belong in your everyday.
+    </p>
+
+    <a href="menu.html" class="cta-btn">Order Online →</a>
+
+    <div class="cta-tags">
+      <span>• New menu every week</span>
+      <span>• Everyday pricing</span>
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
+<script>
+if(sessionStorage.getItem("loggedIn") !== "true"){
+  window.location.href = "login.html";
+}
+</script>
+<script>
+const elements = document.querySelectorAll(".promise-card, .cook-box");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+
+    if (pos < screen - 100) {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
+</script>
+</body>
+</html>

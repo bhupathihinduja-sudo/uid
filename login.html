@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Smoke & Spice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="contact-section">
+
+  <h1 class="contact-title">Sign In</h1>
+
+  <form id="loginForm" class="contact-form">
+
+  <input type="text" id="username" placeholder="Username" required>
+
+  <input type="email" id="email" placeholder="Email" required>
+  <p id="emailError" class="error">Invalid email format</p>
+
+  <input type="text" id="phone" placeholder="Phone Number" required>
+  <p id="phoneError" class="error">Enter 10 digit number</p>
+
+  <input type="password" id="password" placeholder="Password" required>
+  <p id="errorMsg" class="error">Password must be at least 8 characters</p>
+
+  <button type="submit">Sign In</button>
+
+  <p id="loginMsg">✅ Welcome back! Redirecting...</p>
+
+</form>
+
+</section>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let user = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let pass = document.getElementById("password").value;
+
+  let emailError = document.getElementById("emailError");
+  let phoneError = document.getElementById("phoneError");
+  let passError = document.getElementById("errorMsg");
+
+  let valid = true;
+
+  // Username check
+  if(user.length < 3){
+    alert("Username must be at least 3 characters");
+    valid = false;
+  }
+
+  // Email validation
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(!email.match(emailPattern)){
+    emailError.style.display = "block";
+    valid = false;
+  } else {
+    emailError.style.display = "none";
+  }
+
+  // Phone validation
+  let phonePattern = /^[0-9]{10}$/;
+  if(!phone.match(phonePattern)){
+    phoneError.style.display = "block";
+    valid = false;
+  } else {
+    phoneError.style.display = "none";
+  }
+
+  // Password validation
+  if(pass.length < 8){
+    passError.style.display = "block";
+    valid = false;
+  } else {
+    passError.style.display = "none";
+  }
+
+  if(valid){
+    sessionStorage.setItem("loggedIn", "true");
+
+    document.getElementById("loginMsg").style.display = "block";
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1000);
+  }
+});
+</script>
+</body>
+</html>

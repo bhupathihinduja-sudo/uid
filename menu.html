@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu - Smoke & Spice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR (same as your main page) -->
+<header class="navbar">
+  <div class="logo">Smoke <span>& </span> Spice</div>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <button class="order-btn">Order Now</button>
+    <a href="login.html" class="signin">Sign In</a>
+  </div>
+</header>
+
+<!-- MENU SECTION -->
+<section class="menu-page">
+
+  <h1 class="menu-title">Cravings Box</h1>
+
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <img src="image/twelve.jpg">
+      <h3>Chicken Burger</h3>
+      <p>₹270</p>
+      <button onclick="addToCart('Chicken Burger', 270)"> Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="image/thirteen.jpg">
+      <h3>Crispy Chicken Fries</h3>
+      <p>₹120</p>
+      <button onclick="addToCart('Crispy Chicken Fries', 120)">Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="image/fourteen.jpg">
+      <h3>Chicken Wrap</h3>
+      <p>₹150</p>
+      <button onclick="addToCart('Chicken Wrap', 150)">Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="image/fifteen.jpg">
+      <h3>Chilli Chicken</h3>
+      <p>₹250</p>
+      <button onclick="addToCart('Chilli Chicken', 250)">Add to Cart</button>
+    </div>
+    <div class="menu-card">
+  <img src="image/eight.jpg">
+  <h3>Grilled Chicken Bowl</h3>
+  <p>₹370</p>
+  <button onclick="addToCart('Grilled Chicken Bowl', 370)">Add to Cart</button>
+</div>
+
+<div class="menu-card">
+  <img src="image/nine.jpg">
+  <h3>Nonveg Power Bowl</h3>
+  <p>₹390</p>
+  <button onclick="addToCart('Nonveg Power Bowl', 390)">Add to Cart</button>
+</div>
+
+<div class="menu-card">
+  <img src="image/ten.jpg">
+  <h3>Spicy chicken Noodles</h3>
+  <p>₹180</p>
+  <button onclick="addToCart('Spicy chicken Noodles', 180)">Add to Cart</button>
+</div>
+
+<div class="menu-card">
+  <img src="image/eleven.jpg">
+  <h3>Chicken Tikka</h3>
+  <p>₹190</p>
+  <button onclick="addToCart('Chicken Tikka', 190)">Add to Cart</button>
+</div>
+<div class="menu-card">
+  <img src="image/Sixteen.jpg">
+  <h3>Cola</h3>
+  <p>₹75</p>
+  <button onclick="addToCart('Cola', 75)">Add to Cart</button>
+</div>
+
+<div class="menu-card">
+  <img src="image/eighteen.jpg">
+  <h3>Lemon Soda</h3>
+  <p>₹95</p>
+  <button onclick="addToCart('Lemon Soda', 95)">Add to Cart</button>
+</div>
+
+<div class="menu-card">
+  <img src="image/blue.jpg">
+  <h3>Blue Mojito</h3>
+  <p>₹145</p>
+  <button onclick="addToCart('Blue Mojito', 145)">Add to Cart</button>
+</div>
+
+<div class="menu-card">
+  <img src="image/red.jpg">
+  <h3>Strawberry Basil Lemonade</h3>
+  <p>₹125</p>
+  <button onclick="addToCart('Strawberry Basil Lemonade', 125)">Add to Cart</button>
+</div>
+
+  </div>
+
+</section>
+<script src="script.js"></script>
+<script>
+if(sessionStorage.getItem("loggedIn") !== "true"){
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
